@@ -9,6 +9,15 @@ public class Producto {
     private double precio;
     private int cantidad;
 
+    public Producto() {
+    }
+
+    public Producto(String nombre, double precio, int cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
     @XmlElement
     public String getNombre() {
         return nombre;

@@ -16,7 +16,7 @@ public class Productos {
         this.productos = productos;
     }
 
-    @XmlElement
+    @XmlElement (name = "producto")
     public ArrayList<Producto> getProductos() {
         return productos;
     }
