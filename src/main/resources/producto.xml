@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<productos>
+    <producto>
+        <cantidad>6</cantidad>
+        <nombre>Disco</nombre>
+        <precio>50.0</precio>
+    </producto>
+</productos>

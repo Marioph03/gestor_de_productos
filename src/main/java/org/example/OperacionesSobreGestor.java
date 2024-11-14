@@ -36,19 +36,15 @@ public class OperacionesSobreGestor {
     public Producto creaProducto() {
         // Crear un nuevo objeto Producto
         Producto p = new Producto();
-
         // Solicitar el nombre del producto al usuario
         System.out.println("Ingrese un Nombre para el producto: ");
         p.setNombre(sc.nextLine());
-
         // Solicitar el precio del producto al usuario
         System.out.println("Ingrese un Precio para el producto: ");
         p.setPrecio(sc.nextDouble());
-
         // Solicitar la cantidad del producto al usuario
         System.out.println("Ingrese un Cantidad para el producto: ");
         p.setCantidad(sc.nextInt());
-
         // Limpiar el buffer del scanner
         sc.nextLine();
 
@@ -65,10 +61,8 @@ public class OperacionesSobreGestor {
         // Crear un nuevo producto solicitando datos al usuario
         p = creaProducto();
         ArrayList<Producto> productos = new ArrayList<>();
-
         // Especificar la ubicación del archivo XML
         File f = new File("C:\\Users\\Mario\\IdeaProjects\\SGProductos\\src\\main\\resources\\producto.xml");
-
         try {
             // Crear el contexto JAXB para la clase Productos
             JAXBContext jaxbContext = JAXBContext.newInstance(Productos.class);
@@ -248,7 +242,6 @@ public class OperacionesSobreGestor {
             // Guardar los cambios en el archivo XML si se eliminó un producto
             if (productoEliminado) {
                 Transformer transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
                 transformer.transform(new DOMSource(doc), new StreamResult(archivo));
             } else {
                 System.out.println("El producto no existe.");
@@ -277,7 +270,7 @@ public class OperacionesSobreGestor {
                 productos.addAll(productosWrapper.getProductos());
             }
         } catch (JAXBException e) {
-            System.err.println("Error al leer productos desde XML: " + e.getMessage());
+            System.out.println("Error al leer productos desde XML: " + e.getMessage());
         }
         return productos;
     }
